@@ -1,10 +1,47 @@
-let mainNav = document.querySelector("#nav-menu");
+// Array of Links
+let ListArray = [
+  {
+    href: "#how-we-met",
+    name: "How We Met",
+  },
+  {
+    href: "#wedding-party",
+    name: "Wedding Party",
+  },
+  {
+    href: "#registry",
+    name: "Registry",
+  },
+  {
+    href: "#photo-gallery",
+    name: "Photos",
+  },
+];
+
+// Generating the NAV
+
+const NavList = document.createElement("ul");
+NavList.className = "main-nav";
+const NavbarContainer = document.getElementsByClassName("navbar");
+NavbarContainer[0].append(NavList);
+
+for (let i = 0; i < 4; i++) {
+  let NavListItems = document.createElement("li");
+  NavListItems.className = "nav-links";
+  NavList.appendChild(NavListItems);
+  NavListItems.innerHTML = ListArray[i].name;
+  NavListItems.setAttribute('href', ListArray[i].href)
+}
+
+
+// Hamburger menu for mobile screen
 let NavBarToggle = document.getElementById("hamburger-toggle");
 
 NavBarToggle.addEventListener("click", function () {
-  mainNav.classList.toggle("active");
+  NavList.classList.toggle("active");
 });
 
+// Scroll to top button
 let ScrollToTopBtn = document.querySelector("#button");
 const body = window;
 
@@ -47,15 +84,16 @@ let scrollTo = function (to, duration) {
   requestAnimationFrame(animateScroll);
 };
 
+
+// Smooth scroll to the sections
 let smoothScroll = document.getElementsByClassName("nav-links");
 
-smoothScroll.addEventListener("click", function () {
-  e.preventdefault();
-  let scrollTarget = document.querySelector(this).attr("href");
-  if (scrollTarget.length) {
-    let scrollTo = scrollTarget.offset().top;
-    document
-      .querySelector("body, html")
-      .animate({ scrollTop: scrollTo + "px" }, 800);
-  }
-});
+for (let idx = 0; idx < smoothScroll.length; idx++) {
+  const element = smoothScroll[idx];
+  element.addEventListener("click", function (e) {
+    e.preventDefault();
+    const id = element.getAttribute('href')
+    let scrollTarget = document.querySelector(id);
+    scrollTarget.scrollIntoView({behavior: 'smooth'})
+  });
+}
