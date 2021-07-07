@@ -16,6 +16,6 @@ Hamburger Menu (Mobile Screen)
 Scroll to top button
 ```
 
-## Sneak Peak
+## Technologies used
 
-![alt text](wedding-udacity.png)
+HTML,CSS,JavaScript
