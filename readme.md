@@ -13,4 +13,4 @@ Scroll to top button
 ```
 
 ## Sneak Peak 
-![alt text](wedding-udacity.png)
+![alt text](./wedding-udacity.png)

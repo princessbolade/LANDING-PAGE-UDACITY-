@@ -30,9 +30,8 @@ for (let i = 0; i < 4; i++) {
   NavListItems.className = "nav-links";
   NavList.appendChild(NavListItems);
   NavListItems.innerHTML = ListArray[i].name;
-  NavListItems.setAttribute('href', ListArray[i].href)
+  NavListItems.setAttribute("href", ListArray[i].href);
 }
-
 
 // Hamburger menu for mobile screen
 let NavBarToggle = document.getElementById("hamburger-toggle");
@@ -47,7 +46,6 @@ const body = window;
 
 body.addEventListener("scroll", function () {
   if (body.scrollY > 300) {
-    console.log("yes");
     ScrollToTopBtn.classList.add("show");
   } else {
     ScrollToTopBtn.classList.remove("show");
@@ -55,7 +53,6 @@ body.addEventListener("scroll", function () {
 });
 
 ScrollToTopBtn.onclick = function () {
-  console.log("yes");
   scrollTo(0, 300);
 };
 
@@ -84,7 +81,6 @@ let scrollTo = function (to, duration) {
   requestAnimationFrame(animateScroll);
 };
 
-
 // Smooth scroll to the sections
 let smoothScroll = document.getElementsByClassName("nav-links");
 
@@ -92,8 +88,35 @@ for (let idx = 0; idx < smoothScroll.length; idx++) {
   const element = smoothScroll[idx];
   element.addEventListener("click", function (e) {
     e.preventDefault();
-    const id = element.getAttribute('href')
+    const id = element.getAttribute("href");
     let scrollTarget = document.querySelector(id);
-    scrollTarget.scrollIntoView({behavior: 'smooth'})
+    scrollTarget.scrollIntoView({ behavior: "smooth" });
+  });
+}
+
+// Adding active class to sections
+
+const Pagesections = document.querySelectorAll(".sections");
+console.log(Pagesections);
+
+window.addEventListener("scroll", navHighlight);
+
+function navHighlight() {
+  let scrollY = window.pageYOffset;
+
+  Pagesections.forEach((current) => {
+    const sectionHeight = current.offsetHeight;
+    const sectionTop = current.offsetTop - 15;
+    sectionId = current.getAttribute("id");
+
+    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+      document
+        .querySelector(".navbar li[href*=" + sectionId + "]")
+        .classList.add("active");
+    } else {
+      document
+        .querySelector(".navbar li[href*=" + sectionId + "]")
+        .classList.remove("active");
+    }
   });
 }

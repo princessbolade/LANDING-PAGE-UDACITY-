@@ -44,6 +44,10 @@ body {
   cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4AQVEBgE0YdPfwAAAWRJREFUSMe1lj1Ow0AQhb/dEFf81DQRFBFFIiFEyRmgpEFQ0HIFukhwgfRcBG6QIgfIIWiRkzyKjNFmWSdObI802l17Zt7M7tuxHQkROMDbcgGrBwm7Qjo2Lt3a45X40EFmbIYDoO+CIEoEt/d9YFAACDoqyd4LzgRTgSIdBYmEYKOE7dTieKIKvODOjPKEYy6YRUnNNtjK4vmwtF7CONYfwZf5fNp6m0+vOAIEk5KsUvpe0S4XTP5IowQjmhIHzguGtCiCoQ843pZ4JzgBvlsEOQzPRCUXu8ZOMXeQeWshYyBvuII5KyZ2nMA5o13DVTgHTta7JOgC980yl0uL+w9+XPGibdOHtd6VAPqoCfC8cROD+dueALeVTiuYP1UMvLTxSrtebGvTN1GgWBc2ngqyfXnYFVyUABUAx4JMNQmfCc5LtuioNkAEdB0BnTcGEJ3RiwE8Cg7a/D68thk8/CfbqdH9ApMWkjfHYjo+AAAAAElFTkSuQmCC"),
     auto;
 }
+
+.nav-links.active {
+  color: #e98490;
+}
 .hamburger-menu {
   display: none;
 }
@@ -83,6 +87,9 @@ body {
   .active {
     display: block;
   }
+}
+li.active {
+  color: #e98490;
 }
 
 .page-body {
