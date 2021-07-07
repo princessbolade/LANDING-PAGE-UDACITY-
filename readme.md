@@ -1,4 +1,4 @@
-## A SIMPLE Wedding Website Landing Page  
+# A SIMPLE Wedding Website Landing Page  
 This wedding website was built using HTML,CSS and Javascript for the Udacity Front end web development Nano degree course.
 
 ## Amazing Feautures which I have used on this website
